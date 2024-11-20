@@ -4,19 +4,29 @@ import React, { useState } from 'react';
 export const Counter = () => {
   const [count, setCount] = useState(0);
 
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
+
   return (
     <div>
       <h1 data-testid="counter-value">{count}</h1>
-      <button data-testid="increment-button" onClick={() => setCount(count + 1)}>Increment</button>
-      <button data-testid="decrement-button" onClick={() => setCount(count - 1)}>Decrement</button>
-      <button data-testid="reset-button" onClick={() => setCount(0)}>Reset</button>
+      <button onClick={increment} data-testid="increment-button">
+        Increment
+      </button>
+      <button onClick={decrement} data-testid="decrement-button">
+        Decrement
+      </button>
+      <button onClick={reset} data-testid="reset-button">
+        Reset
+      </button>
     </div>
   );
 };
 
 // Greeting Component
-export const Greeting = ({ name }) => {
-  return <h1 data-testid="greeting">Hello, {name}</h1>;
+export const Greeting = ({ nadia }) => {
+  return <h1 data-testid="greeting">Hello, {nadia}</h1>;
 };
 
 // AlertButton Component
